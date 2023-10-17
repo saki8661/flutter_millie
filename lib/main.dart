@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_millie/constants.dart';
+import 'package:flutter_millie/expandable_description.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
@@ -40,10 +41,11 @@ class BookDetail extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          /// 북 이미지 컴포넌트
           Center(
             child: Container(
               height: 300,
-              width: 200,
+              width: 230,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage("https://picsum.photos/200/300"),
@@ -59,25 +61,41 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          /// 간격: 15
           SizedBox(height: 15),
-          Text(
-            "[독점] 향수가 된 식물들",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+
+          /// 타이틀 + writer 컴포넌트
+          Container(
+            child: Column(
+              children: [
+                Text(
+                  "[독점] 향수가 된 식물들",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+
+                /// 간격: 5
+                SizedBox(height: 5),
+
+                /// 작은글자
+                Text(
+                  "장 클로드 엘레나 지금 / 카린 도어링 프로저 그림 / 이주영 옮김",
+                  style: TextStyle(fontSize: 10, color: Colors.grey),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
-          SizedBox(height: 10),
-          Text(
-            "장 클로드 엘레나 지금 / 카린 도어링 프로저 그림 / 이주영 옮김",
-            style: TextStyle(fontSize: 10, color: Colors.grey),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 15),
+
+          /// 북인포
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  /// (아이콘 + 소개 + 수치)
                   Column(
                     children: [
                       SizedBox(
@@ -87,19 +105,26 @@ class BookDetail extends StatelessWidget {
                           backgroundImage: AssetImage("assets/avatar.png"),
                         ),
                       ),
+
+                      /// 간격: 5
                       SizedBox(height: 5),
+
+                      /// 작은글자
                       Text(
                         "이 책이 담긴 서재",
                         style: TextStyle(fontSize: 10, color: Colors.grey),
                       ),
+
+                      /// 간격: 5
                       SizedBox(height: 5),
                       Text(
                         "2,380개",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  Container(height: 60, width: 2, color: Colors.grey),
+                  Container(height: 35, width: 1, color: Colors.grey),
                   Column(
                     children: [
                       Icon(Icons.comment_outlined, color: Colors.grey),
@@ -111,11 +136,12 @@ class BookDetail extends StatelessWidget {
                       SizedBox(height: 5),
                       Text(
                         "4개",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  Container(height: 60, width: 2, color: Colors.grey),
+                  Container(height: 35, width: 1, color: Colors.grey),
                   Column(
                     children: [
                       Icon(Icons.edit_outlined, color: Colors.grey),
@@ -135,6 +161,8 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          /// 컨테이너 간격: 10
           Container(
             width: double.infinity,
             height: 10,
@@ -142,6 +170,8 @@ class BookDetail extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+
+          /// 밀리 순위(있는곳도 있고 없는 곳도 있음)
           Container(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -160,6 +190,8 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          /// 컨테이너 간격: 10
           Container(
             width: double.infinity,
             height: 10,
@@ -167,6 +199,8 @@ class BookDetail extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+
+          /// 밀리 책 소개
           Container(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -191,13 +225,17 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          /// 컨테이너 간격: 0.5
           Container(
             width: double.infinity,
-            height: 2,
+            height: 0.5,
             decoration: BoxDecoration(
               color: Colors.grey,
             ),
           ),
+
+          /// 밀리 픽
           Container(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -227,7 +265,7 @@ class BookDetail extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(FontAwesomeIcons.circle, size: 15),
+                      Icon(FontAwesomeIcons.circle, size: 10),
                       Text(
                         "마니아",
                         style: TextStyle(
@@ -239,8 +277,7 @@ class BookDetail extends StatelessWidget {
                       Text(
                         "마니아들이 푹 빠진 읽을수록 보람 있는 책",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 12,
                         ),
                       ),
                     ],
@@ -249,6 +286,8 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          /// 컨테이너 간격: 10
           Container(
             width: double.infinity,
             height: 10,
@@ -256,6 +295,8 @@ class BookDetail extends StatelessWidget {
               color: Colors.grey,
             ),
           ),
+
+          /// 소제목 + 설명
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -279,7 +320,7 @@ class BookDetail extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 2,
+                height: 0.5,
                 decoration: BoxDecoration(
                   color: Colors.grey,
                 ),
@@ -319,6 +360,7 @@ class BookDetail extends StatelessWidget {
               ),
             ],
           ),
+
           ///낚였다 여기는 가로스크롤되는 자리였다!
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -337,7 +379,8 @@ class BookDetail extends StatelessWidget {
                       SizedBox(height: 5),
                       Text(
                         "라이프스타일",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -352,7 +395,8 @@ class BookDetail extends StatelessWidget {
                       SizedBox(height: 5),
                       Text(
                         "228P",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -367,16 +411,31 @@ class BookDetail extends StatelessWidget {
                       SizedBox(height: 5),
                       Text(
                         "55.98MB",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-          )
-          /// 스크롤 끝자리는 여기!!!
+          ),
 
+          /// 스크롤 끝자리는 여기!!!
+          ExpandableDescription(
+            title: "목차",
+            description: "목차내용",
+          ),
+
+          ExpandableDescription(
+            title: "저자 소개",
+            description: "소개내용",
+          ),
+
+          ExpandableDescription(
+            title: "출판사 서평",
+            description: "서평내용",
+          ),
         ],
       ),
     );
