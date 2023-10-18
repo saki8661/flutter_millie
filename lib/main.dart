@@ -27,6 +27,7 @@ class BookDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /// 앱바 시작
       appBar: AppBar(
         actions: [
           IconButton(
@@ -39,6 +40,7 @@ class BookDetail extends StatelessWidget {
           )
         ],
       ),
+      /// 리스트뷰 시작
       body: ListView(
         children: [
           /// 북 이미지 컴포넌트
@@ -61,7 +63,6 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
-
           /// 간격: 15
           SizedBox(height: 15),
 
@@ -88,14 +89,31 @@ class BookDetail extends StatelessWidget {
             ),
           ),
 
-          /// 북인포
+          /// 간격: 북이미지-제목
+          SizedBox(height: 15),
+          /// 책 제목
+          Text(
+            "[독점] 향수가 된 식물들",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          /// 간격: 제목-작가
+          SizedBox(height: 5),
+          Text(
+            "장 클로드 엘레나 지금 / 카린 도어링 프로저 그림 / 이주영 옮김",
+            style: TextStyle(fontSize: 10, color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+          /// 간격: 작가-북인포(북이미지-제목 간격과 동일)
+          SizedBox(height: 15),
+          /// 북 인포
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  /// (아이콘 + 소개 + 수치)
+                  /// (아이콘 + 설명 + 숫자) 조합
                   Column(
                     children: [
                       SizedBox(
@@ -107,6 +125,7 @@ class BookDetail extends StatelessWidget {
                       ),
 
                       /// 간격: 5
+                      /// 간격: 인포 칼럼 내부
                       SizedBox(height: 5),
 
                       /// 작은글자
