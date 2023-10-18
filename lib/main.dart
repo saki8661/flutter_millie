@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_millie/constants.dart';
+import 'package:flutter_millie/custom_plus.dart';
 import 'package:flutter_millie/expandable_description.dart';
+import 'package:flutter_millie/theme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: theme(),
       debugShowCheckedModeBanner: false,
       home: BookDetail(),
     );
@@ -26,8 +28,6 @@ class BookDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
         actions: [
           IconButton(
             onPressed: () {},
@@ -325,38 +325,10 @@ class BookDetail extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "책 소개",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 20),
-                      Text("에르메스, 시슬리, 까르띠에, 프레데릭 말, 입생로랑 ..."),
-                      Text("세계적인 향수를 탄생시킨 마스터 조향사"),
-                      Text("장 클로드 엘레나의 '향수 식물학' 세계로 초대합니다!"),
-                    ],
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "더보기",
-                      style: TextStyle(
-                        color: kPointMillieColor,
-                      ),
-                    ),
-                  ),
-                ],
+              CustomPlus(
+                title: "책 소개",
+                description:
+                    "에르메스, 시슬리, 까르띠에, 프레데릭 말, 입생로랑 세계적인 향수를 탄생시킨 마스터 조향사 장 클로드 엘레나의 '향수 식물학' 세계로 초대합니다",
               ),
             ],
           ),
@@ -429,7 +401,9 @@ class BookDetail extends StatelessWidget {
 
           ExpandableDescription(
             title: "저자 소개",
-            description: "소개내용",
+            description: "소개내용 \`n"
+                "dkanmsf;af\n"
+                "sakdnkalsnd",
           ),
 
           ExpandableDescription(

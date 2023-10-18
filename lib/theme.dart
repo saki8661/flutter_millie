@@ -21,6 +21,8 @@ ThemeData theme() {
     primarySwatch: primaryYellow,
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(color: Colors.black),
+      backgroundColor: Colors.white,
+      elevation: 0.0,
     ),
   );
 }
