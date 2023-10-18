@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_millie/constants.dart';
 import 'package:flutter_millie/custom_plus.dart';
 import 'package:flutter_millie/expandable_description.dart';
 import 'package:flutter_millie/theme.dart';
@@ -40,6 +41,7 @@ class BookDetail extends StatelessWidget {
           )
         ],
       ),
+
       /// 리스트뷰 시작
       body: ListView(
         children: [
@@ -63,6 +65,7 @@ class BookDetail extends StatelessWidget {
               ),
             ),
           ),
+
           /// 간격: 15
           SizedBox(height: 15),
 
@@ -91,21 +94,7 @@ class BookDetail extends StatelessWidget {
 
           /// 간격: 북이미지-제목
           SizedBox(height: 15),
-          /// 책 제목
-          Text(
-            "[독점] 향수가 된 식물들",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          /// 간격: 제목-작가
-          SizedBox(height: 5),
-          Text(
-            "장 클로드 엘레나 지금 / 카린 도어링 프로저 그림 / 이주영 옮김",
-            style: TextStyle(fontSize: 10, color: Colors.grey),
-            textAlign: TextAlign.center,
-          ),
-          /// 간격: 작가-북인포(북이미지-제목 간격과 동일)
-          SizedBox(height: 15),
+
           /// 북 인포
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -292,7 +281,7 @@ class BookDetail extends StatelessWidget {
                           fontSize: 15,
                         ),
                       ),
-                      Container(height: 15, width: 2, color: Colors.grey),
+                      Container(height: 15, width: 1, color: Colors.grey),
                       Text(
                         "마니아들이 푹 빠진 읽을수록 보람 있는 책",
                         style: TextStyle(
@@ -417,17 +406,111 @@ class BookDetail extends StatelessWidget {
             title: "목차",
             description: "목차내용",
           ),
-
           ExpandableDescription(
             title: "저자 소개",
             description: "소개내용 \`n"
                 "dkanmsf;af\n"
                 "sakdnkalsnd",
           ),
-
           ExpandableDescription(
             title: "출판사 서평",
             description: "서평내용",
+          ),
+          // 컨테이너 간격: 10
+          Container(
+            width: double.infinity,
+            height: 10,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+            ),
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Row(
+                          children: [
+                            Text(
+                              "한 줄 리뷰",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              "350",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: kAccentMillieColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            Icons.chevron_right,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        ListTile(
+                          contentPadding: EdgeInsets.all(0),
+                          leading: CircleAvatar(
+                            radius: 20,
+                            backgroundImage: AssetImage("assets/avatar.png"),
+                          ),
+                          title: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("username"),
+                              Text("writeAt"),
+                              Text("review"),
+                              Text("2023.10.17"),
+                            ],
+                          ),
+                          subtitle: Text("이 리뷰가 마음에 드시나요?"),
+                          trailing: Column(
+                            children: [
+                              TextButton(
+                                onPressed: () {},
+                                child: Icon(
+                                  Icons.more_vert,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () {},
+                                child: Icon(
+                                  Icons.favorite_border_outlined,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+,
+                ],
+              ),
+            ),
           ),
         ],
       ),

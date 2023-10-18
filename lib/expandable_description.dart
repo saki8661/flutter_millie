@@ -24,7 +24,7 @@ class _ExpandableDescriptionState extends State<ExpandableDescription> {
     return ExpansionTile(
       title: Text(
         widget.title,
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
       ),
       trailing: Icon(
         isExpanded ? Icons.expand_less : Icons.expand_more, // 확장 및 축소 아이콘 변경
