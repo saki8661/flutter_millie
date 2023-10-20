@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ReviewCard extends StatelessWidget {
-  const ReviewCard({
-    super.key,
-  });
+  final String username;
+  final String writeAt;
+  final String review;
+  const ReviewCard(
+      {required this.username, required this.writeAt, required this.review});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,13 @@ class ReviewCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "username",
+            username,
             style: TextStyle(
               fontSize: 15,
             ),
           ),
           Text(
-            "작성시간",
+            writeAt,
             style: TextStyle(
               fontSize: 10,
             ),
@@ -31,7 +33,7 @@ class ReviewCard extends StatelessWidget {
         ],
       ),
       subtitle: Text(
-        "알고 있는 내용이지만 다시 읽어보니 재밌어요ㅕㅕ",
+        review,
         style: TextStyle(
           fontSize: 15,
         ),
