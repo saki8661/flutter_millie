@@ -17,6 +17,7 @@ class CustomUserReviewTitle extends StatelessWidget {
         ),
         SizedBox(width: gapMedium),
         Text(
+          /// TODO 대욱 : 책 리뷰 수 받기
           "350",
           style: subTitle1(),
         ),

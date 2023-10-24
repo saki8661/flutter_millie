@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/icon.dart';
 import 'package:flutter_blog/data/model/Book.dart';
-import 'package:flutter_blog/ui/pages/custom/book_detail_page/widgets/book_detail_body.dart';
+import 'package:flutter_blog/ui/pages/custom/book_detail_page/widgets/body/book_detail_body.dart';
 import 'package:flutter_blog/ui/pages/custom/book_detail_page/widgets/book_detail_view_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -28,12 +28,11 @@ class BookDetailPage extends ConsumerWidget {
         title: Text(""),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              /// TODO 대욱 : 서버에 데이터가 존재하면 -> 노란별
+              // 서버에 데이터가 존재하지 않는다면 -> 비어있는 별
+            },
             icon: iconEmptyStar(),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: iconDotMenu(),
           ),
         ],
       ),
