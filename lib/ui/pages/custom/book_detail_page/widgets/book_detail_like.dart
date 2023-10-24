@@ -32,12 +32,12 @@ class BookDetailLike extends StatelessWidget {
                   ),
                   SizedBox(height: gapSmall),
                   Text(
+                    /// TODO 대욱 : 책 좋아요! 한 유저수
                     "이 책이 담긴 서재",
                     style: body2(mColor: kFontGray),
                   ),
                   SizedBox(height: gapSmall),
                   Text(
-                    /// TODO 대욱 : 책 좋아요! 한 유저수
                     "2,380개",
                     style: subTitle3(),
                   ),
