@@ -15,9 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       theme: theme(),
-      initialRoute: Move.PostWritePage,
+      initialRoute: Move.PostDetailPage,
       routes: getRouters(),
     );
   }
