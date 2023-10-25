@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/size.dart';
 import 'package:flutter_blog/ui/widgets/custom_summernote.dart';
 import 'package:flutter_blog/ui/widgets/custom_title_insert.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_summernote/flutter_summernote.dart';
 
-class PostWriteForm extends StatelessWidget {
+class PostWriteForm extends ConsumerWidget {
   const PostWriteForm({
     super.key,
     required this.titleController,
     required GlobalKey<FlutterSummernoteState> keyEditor,
   }) : _keyEditor = keyEditor;
 
+
   final TextEditingController titleController;
   final GlobalKey<FlutterSummernoteState> _keyEditor;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: const EdgeInsets.all(gapMain),
       child: Column(

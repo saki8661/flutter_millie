@@ -3,13 +3,8 @@ import 'package:flutter_blog/_core/constants/font.dart';
 import 'package:flutter_blog/_core/constants/icon.dart';
 import 'package:flutter_blog/ui/pages/custom/post_write_page/widgets/body/post_write_body.dart';
 
-class PostWritePage extends StatefulWidget {
-  @override
-  _PostWritePageState createState() => _PostWritePageState();
-}
-
-class _PostWritePageState extends State<PostWritePage> {
-  String result = '';
+class PostWritePage extends StatelessWidget {
+  const PostWritePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +18,9 @@ class _PostWritePageState extends State<PostWritePage> {
         title: Text("일반 포스트", style: subTitle1()),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+
+            },
             child: Text("발행", style: subTitle1(mFontWeight: FontWeight.normal)),
           )
         ],
