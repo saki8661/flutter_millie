@@ -3,6 +3,7 @@ import 'package:flutter_blog/ui/pages/auth/join_id_email_page/join_id_email_page
 import 'package:flutter_blog/ui/pages/custom/book_detail_page/book_detail_page.dart';
 import 'package:flutter_blog/ui/pages/custom/post_detail_page/post_detail_page.dart';
 import 'package:flutter_blog/ui/pages/custom/post_write_page/post_write_page.dart';
+import 'package:flutter_blog/ui/pages/my_library/my_libray_main_page/my_library_main_page.dart';
 import 'package:flutter_blog/ui/pages/today_now/now_book_list_page/now_book_list_page.dart';
 
 class Move {
@@ -13,6 +14,7 @@ class Move {
   static String PostDetailPage = "/postDetail";
   static String PostWritePage = "/postWrite";
   static String JoinIdEmailPage = "/joinIdEmail";
+  static String MyLibraryMainPage = "/myLibraryMAin";
 
 }
 
@@ -23,6 +25,7 @@ Map<String, Widget Function(BuildContext)> getRouters() {
     Move.BookDetailPage: (context) => const BookDetailPage(bookId: 1),
     Move.PostDetailPage: (context) => const PostDetailPage(),
     Move.PostWritePage: (context) => PostWritePage(),
-    Move.JoinIdEmailPage: (context) => const JoinIdEmailPage()
+    Move.JoinIdEmailPage: (context) => const JoinIdEmailPage(),
+    Move.MyLibraryMainPage: (context) => MyLibraryMainPage()
   };
 }
