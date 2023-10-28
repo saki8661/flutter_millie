@@ -31,18 +31,23 @@ class _MillieBottomNavigationBarState extends State<MillieBottomNavigationBar> {
         });
         if (index == 0) {
           Navigator.pushNamed(context, "/nowBooks");
+          print("투데이 클릭됨");
         }
         if (index == 1) {
           /// TODO 은혜 : 피드 페이지 이동 주소 입력
+          print("피드 클릭됨");
         }
         if (index == 2) {
           /// TODO 은혜 : 검색 페이지 이동 주소 입력
+          print("검색 클릭됨");
         }
         if (index == 3) {
-          /// TODO 은혜 : 내서재 페이지 이동 주소 입력
+          Navigator.pushNamed(context, "/myLibraryMain");
+          print("내서재 클릭됨");
         }
         if (index == 4) {
           /// TODO 은혜 : 관리 페이지 이동 주소 입력
+          print("관리 클릭됨");
         }
       },
       items: const [

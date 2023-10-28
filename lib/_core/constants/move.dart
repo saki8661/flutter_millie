@@ -14,7 +14,7 @@ class Move {
   static String PostDetailPage = "/postDetail";
   static String PostWritePage = "/postWrite";
   static String JoinIdEmailPage = "/joinIdEmail";
-  static String MyLibraryMainPage = "/myLibraryMAin";
+  static String MyLibraryMainPage = "/myLibraryMain";
 
 }
 
