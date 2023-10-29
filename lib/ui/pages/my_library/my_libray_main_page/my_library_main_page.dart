@@ -4,6 +4,7 @@ import 'package:flutter_blog/_core/constants/font.dart';
 import 'package:flutter_blog/_core/constants/icon.dart';
 import 'package:flutter_blog/_core/constants/size.dart';
 import 'package:flutter_blog/ui/millie_bottom_navigation_bar.dart';
+import 'package:flutter_blog/ui/pages/custom/book_read_page/book_read_page.dart';
 import 'package:flutter_blog/ui/pages/my_library/my_library_main_bookcase.dart';
 import 'package:flutter_blog/ui/pages/my_library/my_library_main_like_books.dart';
 import 'package:flutter_blog/ui/pages/my_library/my_library_main_reading_note.dart';
@@ -127,7 +128,7 @@ class MyLibraryMainPage extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -213,54 +214,62 @@ class MyLibraryMainPage extends StatelessWidget {
                 ),
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return GestureDetector(
+                  return InkWell(
                     onTap: () {
-                      showModalBottomSheet(
+                      // 이미지를 선택했을 때 바텀 시트를 올릴 코드를 추가
+                      showDialog(
                         context: context,
-                        backgroundColor: Colors.transparent,
                         builder: (BuildContext context) {
-                          return Container(
-                            height: 210,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(16),
-                                topRight: Radius.circular(16),
-                              ),
+                          return AlertDialog(
+                            title: Text(
+                                "책 삭제",
+                              style: title1(),
+                              textAlign: TextAlign.center,
                             ),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Text("이 사진을 삭제하시겠습니까?"),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                            content: Text(
+                                "선택한 책 삭제 하시겠습니까?",
+                              style: body1(mColor: kFontGray),
+                              textAlign: TextAlign.center,
+                            ),
+                            actions: <Widget>[
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        // 삭제 로직을 여기에 구현
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text("삭제"),
+                                    Container(
+                                      width: 100,
+                                      height: 100,
+                                      color: Colors.black,
                                     ),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text("취소"),
+
+                                    Expanded(
+                                      child: Container(
+                                        child: TextButton(
+                                          style: TextButton.styleFrom(
+                                            side: BorderSide(
+                                              color: Colors.red, // 빨간색 테두리
+                                            ),
+                                          ),
+                                          child: Text("삭제"),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
-                              ],
-                            ),
+                              )
+,
+                            ],
                           );
                         },
                       );
+
                     },
                     child: Image.network(
-                        "https://picsum.photos/id/${index + 1}/200/200"),
+                      "https://picsum.photos/id/${index + 1}/200/200",
+                    ),
                   );
                 },
               ),
@@ -294,7 +303,39 @@ class MyLibraryMainPage extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: MillieBottomNavigationBar(),
+        bottomNavigationBar: BottomAppBar(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BookReadPage()),
+                      );
+                    },
+                    child: Text(
+                      "바로읽기",
+                      style: subTitle1(mColor: kFontWhite),
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: MillieBottomNavigationBar(),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

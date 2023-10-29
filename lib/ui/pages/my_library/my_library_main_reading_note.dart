@@ -17,6 +17,21 @@ class _MyLibraryMainReadingNoteState extends State<MyLibraryMainReadingNote> {
           "독서노트"
         ),
       ),
+      body:               GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 10,
+        ),
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return InkWell(
+              child: Image.network(
+                  "https://picsum.photos/200/200")
+                  );
+
+        },
+      ),
     );
   }
 }

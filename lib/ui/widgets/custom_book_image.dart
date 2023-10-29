@@ -16,7 +16,8 @@ class CustomBookImage extends StatelessWidget {
         height: imageHeight,
         width: imageWidth,
         child: CachedNetworkImage(
-          imageUrl: "http://192.168.0.40:8080/images/${picUrl}",
+          // imageUrl: "http://192.168.0.40:8080/images/${picUrl}",
+          imageUrl: "https://picsum.photos/200/200",
           fit: BoxFit.cover,
           placeholder: (context, url) => CircularProgressIndicator(
             strokeWidth: 5,

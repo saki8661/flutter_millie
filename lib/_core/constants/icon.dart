@@ -66,6 +66,10 @@ Icon iconBookMark({Color mColor = kFontBlack, double mSize = 25}) {
   return Icon(Icons.bookmark, color: mColor, size: mSize);
 }
 
+Icon iconBookMartOutline({Color mColor = kFontBlack, double mSize = 25}) {
+  return Icon(Icons.bookmark_border_outlined, color: mColor, size: mSize);
+}
+
 Icon iconBottomSearch({Color mColor = kFontBlack, double mSize = 25}) {
   return Icon(Icons.manage_search, color: mColor, size: mSize);
 }
