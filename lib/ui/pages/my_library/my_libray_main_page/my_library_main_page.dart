@@ -7,7 +7,7 @@ import 'package:flutter_blog/ui/millie_bottom_navigation_bar.dart';
 import 'package:flutter_blog/ui/pages/custom/book_read_page/book_read_page.dart';
 import 'package:flutter_blog/ui/pages/my_library/my_library_main_bookcase.dart';
 import 'package:flutter_blog/ui/pages/my_library/my_library_main_like_books.dart';
-import 'package:flutter_blog/ui/pages/my_library/my_library_main_reading_note.dart';
+import 'package:flutter_blog/ui/pages/my_library/my_libray_main_page/my_library_main_reading_note/my_library_main_reading_note.dart';
 
 class MyLibraryMainPage extends StatelessWidget {
   const MyLibraryMainPage({Key? key}) : super(key: key);
