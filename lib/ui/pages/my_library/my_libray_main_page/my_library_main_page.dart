@@ -123,7 +123,7 @@ class MyLibraryMainPage extends StatelessWidget {
                                                   style: subTitle1(
                                                       mFontWeight:
                                                           FontWeight.normal),
-                                                )
+                                                ),
                                               ],
                                             ),
                                           ),
@@ -222,26 +222,26 @@ class MyLibraryMainPage extends StatelessWidget {
                         builder: (BuildContext context) {
                           return AlertDialog(
                             title: Text(
-                                "책 삭제",
+                              "책 삭제",
                               style: title1(),
                               textAlign: TextAlign.center,
                             ),
                             content: Text(
-                                "선택한 책 삭제 하시겠습니까?",
+                              "선택한 책 삭제 하시겠습니까?",
                               style: body1(mColor: kFontGray),
                               textAlign: TextAlign.center,
                             ),
                             actions: <Widget>[
                               Container(
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Container(
                                       width: 100,
                                       height: 100,
                                       color: Colors.black,
                                     ),
-
                                     Expanded(
                                       child: Container(
                                         child: TextButton(
@@ -259,13 +259,11 @@ class MyLibraryMainPage extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              )
-,
+                              ),
                             ],
                           );
                         },
                       );
-
                     },
                     child: Image.network(
                       "https://picsum.photos/id/${index + 1}/200/200",
